@@ -1,0 +1,450 @@
+
+/* ___________________MENU__________________ */
+.navbar .navbar-brand {
+    font-weight: normal;
+    font-size: 25px;
+    color:darkorange;
+}
+
+.navbar .navbar-nav .nav-link{
+    font-weight: normal;
+    font-size: 14px;
+    padding: 10px;
+    float: right;
+    transition: all-ease-in 0.5s;
+    color:darkorange;
+}
+.navbar .navbar-nav .nav-link:hover{
+    color:antiquewhite;
+    background: transparent;
+}
+
+.navbar .navbar-nav .nav-link::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: green;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+.navbar .navbar-nav .nav-link:hover::after{
+    width: 100%;
+    background: transparent;
+    color: #FFFF;
+}
+
+/* ___________________HOME__________________ */
+
+#home{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    color: #FFFF;
+}
+
+#home video{
+    position: fixed;
+    top:50%;
+    left:50%;
+    min-height: 100%;
+    min-width: 100%;
+    height: auto;
+    width: auto;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    object-fit: cover;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: -10;
+    transition: 1s opacity;
+}
+
+#home .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+#home h1{
+    color: #FFFF;
+    font-size: 7vw;
+    line-height: 1.2em;
+}
+#home p{
+    color: #FFFF;
+}
+#home .hometext{
+    z-index: 99;
+}
+#home.container {
+    display: inline-block;
+  }
+ 
+#home .hometext .typed-out{
+    color:lightblue;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    animation:  typing 2s steps(20, end) forwards, blink .55s infinite;
+    font-size:74px;
+    font-weight: bolder;
+    width: 0;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+@keyframes blink {
+    from { border-color: transparent }
+    to { border-color: orange; }
+}
+
+
+
+
+
+/* ____________________________________BUTTON________________________________________ */
+
+.section-btn{
+    margin: 32px 0 0 0;
+    padding: 0;
+}
+.section-btn a{
+    color: #FFFF;
+    font-weight: normal;
+    line-height: 45px;
+    perspective: 1000px;
+}
+.section-btn a span{
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 2px 27px;
+    background: rgb(12, 148, 12);
+    border-radius: 1px;
+    transition: transform 0.3s;
+    transform-origin:50% 0 ;
+    transform-style: preserve-3d;
+}
+.section-btn a span::before{
+    position: absolute;
+    top: 100%;
+    left:0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background: #000;
+    border-radius: 1px;
+    padding: 2px 27px;
+    transition: background 0.3s;
+    transform: rotateX(-90deg);
+    content: attr(data-hover);
+    transform-origin: 50% 0;
+
+}
+
+.section-btn a:hover span,
+.section-btn a:focus span{
+    transform: rotateX(90deg) translateY(-22px);
+}
+
+
+
+
+/*about*/
+#about{
+    padding-bottom: 5%;
+    padding-top: 5%;
+    color:#000;
+    background-color: aliceblue;
+    
+    
+}
+
+.demo-wrap {
+    overflow: hidden;
+    position: relative;
+
+  }
+  
+  .demo-bg {
+    opacity: 0.25;
+    position: absolute;
+    left: 0;
+    top:40px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .demo-content {
+    position: relative;
+    padding: 100px;
+    z-index: 1;
+  }
+
+h4{
+    font-family: Gabriola;
+    font-weight:lighter;
+    color:#000;
+    text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+
+}
+
+
+
+
+
+/*project*/
+#project{
+    background-color: aliceblue;
+}
+#project .project-item{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+    padding: 0;
+    vertical-align: middle;
+    text-align:center;
+
+}
+
+#project .project-item .project-overlay{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   font-size: larger;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+   background: rgab(0,0,0,0.5);
+   opacity:unset;
+   transition: all ease-in-out 0.4s;
+}
+
+#project .project-item:hover .project-overlay{
+    opacity: 1;
+}
+#project .project-item .project-overlay .project-info{
+    padding: 12em 0;
+}
+.project-info h1{
+    color:#fff;
+    margin:0;
+    font-size: 25px;
+    letter-spacing: 0.2px;
+}
+
+.project-item img{
+    transition: all ease-in-out 0.4s;
+    width: 800px;
+    height: 355px;
+}
+
+.project-item:hover img{
+transform: scale(1.6);
+}
+
+/*#Gallery*/
+#gallery{
+    background-color: aliceblue;
+    padding-top: 20px;
+}
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.5s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 45px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.8s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+    
+
+
+
+
+
+
+/*footer*/
+#footer{
+    padding: 0 0 30px 0;
+    color: #d0d0d0;
+    font-size: 14px;
+    background: #111111;
+}
+#footer .footer-top{
+    padding: 60px 0 30px;
+    background: #a9a9a947;
+    color: #fff;
+}
+#footer .footer-top .footer-contact h3{
+    color: #0ea10e;
+    text-shadow: 1px 1px 1px black;
+}
+#footer .footer-top .footer-contact h4{
+    font-size: 22px;
+    margin: 0 0 30px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+}
+#footer .footer-top .footer-contact p{
+    font-size: 14px;
+    margin: 0;
+    line-height: 1;
+    font-weight: 700;
+    color: white;
+}
+#footer .footer-top h4{
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 12px;
+}
+#footer .footer-top .footer-links{
+    margin-bottom: 30px;
+}
+#footer .footer-top .footer-links ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#footer .footer-top .footer-links ul li{
+    padding-right: 2px;
+    color: #0ea10e;
+    font-size: 18px;
+    line-height: 1;
+}
+#footer .footer-top .footer-links ul li{
+    padding-right: 10px 0;
+    display: flex;
+    align-items: center;
+}
+#footer .footer-top .footer-links ul li:first-child{
+    padding-top: 0;
+}
+#footer .footer-top .footer-links ul li a{
+    color: white;
+    transition: 0.3s ease;
+    display: inline-block;
+    line-height: 2;
+}
+#footer .footer-top .footer-links ul li a:hover{
+    text-decoration: none;
+    color: #0ea10e;
+}
+#footer .footer-top .socail-links a{
+    font-size: 18px;
+    display: inline-block;
+    background: #373737;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    padding-right: 4px;
+    border-radius: 50px;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s ease;
+}
+#footer .footer-top .socail-links a:hover{
+    background: #0ea10e;
+    color: white;
+    text-decoration: none;
+}
+
+#footer .copyright{
+    text-align: center;
+    float: left;
+}
+#footer .credits{
+    float: right;
+    text-align: center;
+}
